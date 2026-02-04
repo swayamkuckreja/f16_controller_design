@@ -9,7 +9,7 @@
 % Author: Richard S. Russell
 % 
 % Edit: Ewoud Smeur (2021)
-%================================================1
+%================================================
 clear;
 
 global fi_flag_Simulink
@@ -78,8 +78,11 @@ D_red = zeros(5,2);
 
 SS_red = ss(A_red, B_red, C_red, D_red)
 
-tf_phi_da = tf(SS_red(1,1))
-damp(tf_phi_da)
+function lambdaWrapped = fcn(lambda)
+%#codegen
+lambdaWrapped = wrapToPi(lambda);
+
+
 
 
 
