@@ -80,7 +80,9 @@ SS_red = ss(A_red, B_red, C_red, D_red)
 
 tf_phi_da = tf(SS_red(1,1))
 damp(tf_phi_da)
-
+trim_state_lo(6)
+trim_state_lo(4)
+trim_state_lo(9)
 
 
 
